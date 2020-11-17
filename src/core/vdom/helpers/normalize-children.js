@@ -30,9 +30,9 @@ export function simpleNormalizeChildren (children: any) {
 // is needed to cater to all possible types of children values.
 export function normalizeChildren (children: any): ?Array<VNode> {
   return isPrimitive(children)
-    ? [createTextVNode(children)]
+    ? [createTextVNode(children)] // 转换成文本类型的vnode节点
     : Array.isArray(children)
-      ? normalizeArrayChildren(children)
+      ? normalizeArrayChildren(children) // 把数组多维数组转换成一维数组
       : undefined
 }
 

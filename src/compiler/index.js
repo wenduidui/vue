@@ -19,7 +19,9 @@ export const createCompiler = createCompilerCreator(function baseCompile (
   const code = generate(ast, options)
   return {
     ast,
+    // 渲染函数
     render: code.render,
+    // 静态渲染函数,生成静态 vnode 树
     staticRenderFns: code.staticRenderFns
   }
 })
